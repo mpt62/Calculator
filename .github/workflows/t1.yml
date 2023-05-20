@@ -2,7 +2,7 @@
 name: build
 env:
   APPLICATION_NAME : "Calculator"
-  DEPLOY_PACKAGE_NAME : "${{ env.APPLICATION_NAME }}-{{ github.sha }}" 
+  DEPLOY_PACKAGE_NAME : "Calculator-{{ github.sha }}" 
 
 on:
   push:
