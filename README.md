@@ -2,7 +2,7 @@
 
 Status of Last Deployment: <br>
 <img src="https://github.com/mpt62/Calculator/workflows/build/badge.svg?branch=master"><br>
-![build]("https://github.com/mpt62/Calculator/workflows/t1.yml/badge.svg?branch=master)
+
 A very basic calculator application created using Java **Swing**. 
 
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
