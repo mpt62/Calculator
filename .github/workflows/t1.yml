@@ -56,7 +56,7 @@ jobs:
           ls -al ./release
       - name: releaser-action
         uses: unfor19/release-action@1.0.0
-         with:
+        with:
           action: build
           src-dir: ./release
           gh-token: ${{ secrets.GH_TOKEN }}
