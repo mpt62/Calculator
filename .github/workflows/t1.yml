@@ -54,10 +54,9 @@ jobs:
           mkdir ./release
           mv ./target/${{env.APPLICATION_NAME}}.jar ./release/${{env.DEPLOY_PACKAGE_NAME}}.jar
           ls -al ./release
-      - name: releaser-action
-        uses: zattoo/publish@1.1.2
+      - name: dictav/release
+        uses: dictav/github-action-release@v0.0.1
         with:
-          sources: ./release
           github_token: ${{ secrets.GH_TOKEN }}
         
      
