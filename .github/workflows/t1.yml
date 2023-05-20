@@ -48,7 +48,16 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Publish package
-        run: mvn --batch-mode deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
+        run: |
+          mvn -Djar.finalName=${{ env.APPLICATION_NAME }} -B clean verify
+          ls -al ./target
+          mkdir ./release
+          mv ./target/${{env.APPLICATION_NAME}}.jar ./release/${{env.DEPLOY_PACKAGE_NAME}}.jar
+          ls -al ./release
+      - name: releaser-action
+        uses: unfor19/release-action@1.0.0
+         with:
+          action: build
+          src-dir: ./release
+        
+     
