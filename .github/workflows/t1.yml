@@ -59,5 +59,6 @@ jobs:
          with:
           action: build
           src-dir: ./release
+          gh-token: ${{ secrets.GH_TOKEN }}
         
      
