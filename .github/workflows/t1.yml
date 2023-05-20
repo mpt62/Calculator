@@ -55,10 +55,9 @@ jobs:
           mv ./target/${{env.APPLICATION_NAME}}.jar ./release/${{env.DEPLOY_PACKAGE_NAME}}.jar
           ls -al ./release
       - name: releaser-action
-        uses: unfor19/release-action@1.0.0
+        uses: zattoo/publish@1.1.2
         with:
-          action: build
-          src-dir: ./release
-          gh-token: ${{ secrets.GH_TOKEN }}
+          sources: ./release
+          github_token: ${{ secrets.GH_TOKEN }}
         
      
