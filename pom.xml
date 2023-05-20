@@ -14,6 +14,13 @@
         <jackson-dataformat-yaml.version>2.14.2</jackson-dataformat-yaml.version>
         <junit-jupiter-params.version>5.9.2</junit-jupiter-params.version>
     </properties>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/mpt62/Calculator</url>
+    </repository>
+  </distributionManagement>
 
     <dependencies>
         <dependency>
