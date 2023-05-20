@@ -27,7 +27,7 @@ jobs:
           mvn -Djar.finalName=${{ env.APPLICATION_NAME }} -B clean verify
           ls -al ./target
           mkdir ./release
-          echo "mv ./target/${{env.APPLICATION_NAME}}.jar ./release/${{env.DEPLOY_PACKAGE_NAME}}.jar"
+          mv ./target/${{env.APPLICATION_NAME}}.jar ./release/${{env.DEPLOY_PACKAGE_NAME}}.jar
           ls -al ./release
 #      - name: Upload coverage reports to Codecov
 #        uses: codecov/codecov-action@v3
