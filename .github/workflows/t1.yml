@@ -2,7 +2,7 @@
 name: build
 env:
   APPLICATION_NAME : "Calculator"
-  DEPLOY_PACKAGE_NAME : "Calculator-{{ github.sha }}" 
+  DEPLOY_PACKAGE_NAME : "Calculator-ver-{{ github.sha }}" 
 
 on:
   push:
@@ -26,6 +26,9 @@ jobs:
         run: |
           mvn -Djar.finalName=${{ env.APPLICATION_NAME }} -B clean verify
           ls -al ./target
+          mkdir ./release
+          mv ./target/${{ env.APPLICATION_NAME }}.jar ./release/${{ env.DEPLOY_PACKAGE_NAME }}
+          ls -al ./release
 #      - name: Upload coverage reports to Codecov
 #        uses: codecov/codecov-action@v3
 #        with:
