@@ -55,8 +55,12 @@ jobs:
           mv ./target/${{env.APPLICATION_NAME}}.jar ./release/${{env.DEPLOY_PACKAGE_NAME}}.jar
           ls -al ./release
       - name: dictav/release
-        uses: dictav/github-action-release@v0.0.1
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
+          repo_token: ${{ secrets.GH_TOKEN }}
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: ./release/${{env.DEPLOY_PACKAGE_NAME}}.jar
         
      
