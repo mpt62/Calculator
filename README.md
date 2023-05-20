@@ -1,7 +1,7 @@
 # Calculator
 
 Status of Last Deployment: <br>
-<img src="https://github.com/mpt62/Calculator/workflows/build/badge.svg?branch=master"><br>
+[![build](https://github.com/mpt62/Calculator/actions/workflows/t1.yml/badge.svg)](https://github.com/mpt62/Calculator/actions/workflows/t1.yml)
 
 A very basic calculator application created using Java **Swing**. 
 
