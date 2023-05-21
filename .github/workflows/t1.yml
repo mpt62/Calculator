@@ -26,7 +26,9 @@ jobs:
       - name: Build with Maven
         run: mvn -Djar.finalName=${{env.APPLICATION_NAME}} -B clean verify
       - name: run test
-        run: ./test.sh
+        run: |
+          chmod +x ./test.sh
+          ./test.sh
 #      - name: rename result
 #        run: mv ./target/calculator*.jar ./target/calculator.jar
       - name: Upload a Build Artifact
