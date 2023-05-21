@@ -12,6 +12,7 @@ on:
 
 jobs:
   build:
+    name: build-part 
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +28,7 @@ jobs:
          mvn -Djar.finalName=${{env.APPLICATION_NAME}} -B clean verify
          ls -al ./target
       - name: rename result
-        run: mv .target/calculator*.jar ./target/calculator.jar
+        run: mv ./target/calculator*.jar ./target/calculator.jar
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with: 
@@ -35,7 +36,7 @@ jobs:
          path: ./target/${{env.APPLICATION_NAME}}.jar
 
   publish:
-    name: Publish
+    name: cd-part
     runs-on: ubuntu-latest
     needs:
       - build
