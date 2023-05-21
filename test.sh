@@ -5,7 +5,7 @@ if [ -d ./target ]; then
   exit 0
  else.
   if [ -f ./target/{$APPLICATION_NAME}*.jar ]; then
-   mv ./target/${APPLICATION_NAME}*.jar ./target/${APPLICATION_NAME}.jar
+   echo "mv ./target/${APPLICATION_NAME}*.jar ./target/${APPLICATION_NAME}.jar"
    exit 0
   else
    echo "no ${APPLICATION_NAME} jar file"
