@@ -1,4 +1,5 @@
 #!/bin/bash
+export
 if [ -d ./target ]; then
  if [ -f ./target/${APPLICATION_NAME}.jar ]; then
   exit 0
