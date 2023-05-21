@@ -26,7 +26,7 @@ jobs:
       - name: Build with Maven
         run: mvn -Djar.finalName=${{env.APPLICATION_NAME}} -B clean verify
       - name: rename result
-        run: mv ./target/calculator*.jar ./target/calculator-cvcv.jar
+        run: mv ./target/calculator*.jar ./target/calculator.jar1
       - name: run test
         run: |
           ls -al ./target
