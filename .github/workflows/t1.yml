@@ -1,8 +1,8 @@
 
 name: build
 env:
-  APPLICATION_NAME : "Calculator"
-  DEPLOY_PACKAGE_NAME : "Calculator-ver-${{github.sha}}" 
+  APPLICATION_NAME : "calculator"
+  DEPLOY_PACKAGE_NAME : "calculator-ver-${{github.sha}}" 
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
          mvn -Djar.finalName=${{env.APPLICATION_NAME}} -B clean verify
          ls -al ./target
       - name: rename result
-        run: mv ./calculator*.jar calculator.jar
+        run: mv .target/calculator*.jar ./target/calculator.jar
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with: 
