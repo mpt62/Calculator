@@ -27,7 +27,7 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with: 
-         name: ${{DEPLOY_PACKAGE_NAME}}
+         name: ${{env.DEPLOY_PACKAGE_NAME}}
          path: ./target/${{env.APPLICATION_NAME}}.jar
 
 publish:
@@ -43,7 +43,7 @@ publish:
         uses: actions/download-artifact@v2.1.1
         with:
          # Artifact name
-         name: ${{DEPLOY_PACKAGE_NAME}}
+         name: ${{env.DEPLOY_PACKAGE_NAME}}
       - name: Display structure of downloaded files
         run: ls -R
       - name: dictav/release
