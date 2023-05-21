@@ -46,13 +46,13 @@ jobs:
          name: ${{env.DEPLOY_PACKAGE_NAME}}
       - name: Display structure of downloaded files
         run: ls -R
-      - name: dictav/release
+      - name: release packet
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: ${{ secrets.GH_TOKEN }}
           automatic_release_tag: "latest"
           prerelease: true
           title: "Development Build"
-          files: ./release/${{env.DEPLOY_PACKAGE_NAME}}.jar
+          files: ./${{env.APPLICATION_NAME}}.jar
         
      
