@@ -21,8 +21,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-#      - name: Check code style
-#        run: mvn -B checkstyle:checkstyle
+      - name: Check code style
+        run: mvn -B checkstyle:checkstyle
       - name: Build with Maven
         run: mvn -Djar.finalName=${{env.APPLICATION_NAME}} -B clean verify
 #      - name: rename result
