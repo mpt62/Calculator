@@ -25,12 +25,12 @@ jobs:
         run: mvn -B checkstyle:checkstyle
       - name: Build with Maven
         run: mvn -Djar.finalName=${{env.APPLICATION_NAME}} -B clean verify
+      - name: rename result
+        run: mv ./target/calculator*.jar ./target/calculator-cvcv.jar
       - name: run test
         run: |
           chmod +x ./test.sh
           ./test.sh
-#      - name: rename result
-#        run: mv ./target/calculator*.jar ./target/calculator.jar
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with: 
@@ -42,17 +42,13 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - build
-#    permissions:
-#      contents: read
-#      packages: write
     steps:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v2.1.1
         with:
-         # Artifact name
          name: ${{env.DEPLOY_PACKAGE_NAME}}
-      - name: Display structure of downloaded files
-        run: ls -R
+#      - name: Display structure of downloaded files
+#        run: ls -R
       - name: release packet
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
